@@ -9,7 +9,10 @@
 'use strict';
 
 var expect = require('chai').expect;
+var helmet = require('helmet');
 var ConvertHandler = require('../controllers/convertHandler.js');
+
+helmet.xssFilter()
 
 module.exports = function (app) {
   
