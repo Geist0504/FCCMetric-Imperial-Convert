@@ -13,6 +13,7 @@ var helmet = require('helmet');
 var ConvertHandler = require('../controllers/convertHandler.js');
 
 helmet.xssFilter()
+helmet.noSniff()
 
 module.exports = function (app) {
   
