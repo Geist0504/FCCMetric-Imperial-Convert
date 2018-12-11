@@ -11,7 +11,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var regex = /[+-]?\d+(?:\.\d+)?/g;
     let result = input.match(regex)
-    console.log(result)
+    console.log(result[0])
     return result;
   };
   
