@@ -9,8 +9,9 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
-    
+    var regex = /[+-]?\d+(?:\.\d+)?/g;
+    let result = input.match(regex)
+    console.log(result)
     return result;
   };
   
