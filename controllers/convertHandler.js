@@ -12,7 +12,7 @@ function ConvertHandler() {
     var regex = /[a-zA-Z]/gi;
     //var regex = /[+-]?\d+(?:\.\d+)?/g;
     let firstChar = input.match(regex)[0]
-    let result = input.split(firstChar)
+    let result = eval(input.slice(0,input.indexOf(firstChar)))
     console.log(result)
     return result;
   };

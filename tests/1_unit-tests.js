@@ -35,12 +35,13 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      let input = '1/2.5gal';
+      assert.equal(convertHandler.getNum(input),.4);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
+      let input = '1/2/5gal';
       //done();
     });
     
