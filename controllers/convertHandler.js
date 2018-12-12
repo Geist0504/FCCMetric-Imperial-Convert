@@ -9,8 +9,11 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var regex = /[+-]?\d+(?:\.\d+)?/g;
-    let result = input.match(regex)[0]
+    var regex = /[a-zA-Z]/gi;
+    //var regex = /[+-]?\d+(?:\.\d+)?/g;
+    let firstChar = input.match(regex)[0]
+    let result = input.split(firstChar)
+    console.log(result)
     return result;
   };
   
@@ -22,7 +25,15 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    var result;
+    let map = {
+      'gal':'L',
+      'L':'gal',
+      'lbs':'kg',
+      'kg':'lbs',
+      'mi':'km',
+      'km':'mi'
+    }
+    let result = map[initUnit];
     
     return result;
   };

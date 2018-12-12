@@ -23,13 +23,15 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      let input = '1.5gal';
+      assert.equal(convertHandler.getNum(input),1.5);
+      done();
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+      let input = '1/2gal';
+      assert.equal(convertHandler.getNum(input),.5);
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
