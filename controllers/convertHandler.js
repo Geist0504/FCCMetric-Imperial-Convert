@@ -10,16 +10,25 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var regex = /[a-zA-Z]/gi;
-    let doubleFraction = /([^\/]*/[^/]*){2}/
+    let doubleFraction = /([^\/]*\/[^\/]*){2}/
     let firstChar = input.match(regex)[0]
     let numeric = input.slice(0,input.indexOf(firstChar))
-    let result = numeric.match(doubleFraction);
-    console.log(numeric, result)
-    return result;
+    let failure = numeric.match(doubleFraction);
+    if(failure){
+      return 'invalid number'
+    }
+    else{
+      if(numeric == ''){
+        numeric = 1
+      }
+      let result = eval(numeric)
+      return result;
+    }
   };
   
   this.getUnit = function(input) {
     var regex = /[a-zA-Z]+$/g;
+    console.log(regex)
     let result = input.match(regex)[0]
     
     return result;

@@ -42,12 +42,14 @@ suite('Unit Tests', function(){
     
     test('Invalid Input (double fraction)', function(done) {
       let input = '1/2/5gal';
-      //done();
+      assert.equal(convertHandler.getNum(input),'invalid number');
+      done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+      let input = 'gal';
+      assert.equal(convertHandler.getNum(input),1);
+      done();
     }); 
     
   });
@@ -57,7 +59,7 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        //assert
+        assert.equal(convertHandler.getNum(input),ele.toLowerCase());
       });
       done();
     });
