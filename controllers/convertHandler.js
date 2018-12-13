@@ -28,10 +28,14 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var regex = /[a-zA-Z]+$/g;
-    console.log(regex)
+    let validInputs = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     let result = input.match(regex)[0]
-    
-    return result;
+    if (validInputs.contains(result)){
+      return result
+    }
+    else{
+      return 'invalid input'
+    }
   };
   
   this.getReturnUnit = function(initUnit) {
