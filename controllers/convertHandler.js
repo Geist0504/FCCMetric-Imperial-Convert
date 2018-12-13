@@ -10,10 +10,11 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var regex = /[a-zA-Z]/gi;
-    //var regex = /[+-]?\d+(?:\.\d+)?/g;
+    let doubleFraction = /([^\/]*/[^/]*){2}/
     let firstChar = input.match(regex)[0]
-    let result = eval(input.slice(0,input.indexOf(firstChar)))
-    console.log(result)
+    let numeric = input.slice(0,input.indexOf(firstChar))
+    let result = numeric.match(doubleFraction);
+    console.log(numeric, result)
     return result;
   };
   
