@@ -82,7 +82,6 @@ function ConvertHandler() {
     }
     
     var result = initNum * eval(map[initUnit.toLowerCase()]);
-    console.log(eval(map[initUnit.toLowerCase()]))
     return result;
   };
   
