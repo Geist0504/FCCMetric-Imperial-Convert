@@ -41,19 +41,27 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     let map = {
-      'gal':'L',
-      'L':'gal',
+      'gal':'l',
+      'l':'gal',
       'lbs':'kg',
       'kg':'lbs',
       'mi':'km',
       'km':'mi'
     }
-    let result = map[initUnit];
+    let result = map[initUnit.toLowerCase()];
     
     return result;
   };
 
   this.spellOutUnit = function(unit) {
+    let map = {
+      'gal': 'gallon',
+      'l':'liter',
+      'lbs':'pounds',
+      'kg':'lbs',
+      'mi':'km',
+      'km':'mi'
+    }
     var result;
     
     return result;
