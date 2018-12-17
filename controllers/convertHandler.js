@@ -55,14 +55,15 @@ function ConvertHandler() {
 
   this.spellOutUnit = function(unit) {
     let map = {
-      'gal': 'gallon',
-      'l':'liter',
+      'gal': 'gallons',
+      'l':'liters',
       'lbs':'pounds',
-      'kg':'lbs',
-      'mi':'km',
-      'km':'mi'
+      'kg':'kilograms',
+      'mi':'miles',
+      'km':'kilometers'
     }
-    var result;
+    
+    let result = map[unit.toLowerCase()];
     
     return result;
   };
@@ -71,8 +72,17 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
+    const map = {
+      'gal':'3.78541',
+      'l':'1/3.78541',
+      'lbs':'0.453592',
+      'kg':'1/0.453592',
+      'mi':'1.60934',
+      'km':'1/1.60934'
+    }
     
+    var result = initNum * eval(map[initUnit.toLowerCase()]);
+    console.log(eval(map[initUnit.toLowerCase()]))
     return result;
   };
   
