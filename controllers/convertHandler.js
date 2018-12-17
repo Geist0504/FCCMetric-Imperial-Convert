@@ -30,10 +30,11 @@ function ConvertHandler() {
     var regex = /[a-zA-Z]+$/g;
     let validInputs = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     let result = input.match(regex)[0]
-    if (validInputs.contains(result)){
+    if (validInputs.includes(result)){
       return result
     }
     else{
+      
       return 'invalid input'
     }
   };
