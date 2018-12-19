@@ -30,7 +30,6 @@ function ConvertHandler() {
     var regex = /[a-zA-Z]+$/g;
     let validInputs = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     let result = input.match(regex)[0]
-    console.log(result)
     if (validInputs.includes(result)){
       return result
     }
@@ -82,11 +81,11 @@ function ConvertHandler() {
     }
     
     var result = initNum * eval(map[initUnit.toLowerCase()]);
-    return result;
+    return Math.round(result * 100000) / 100000 ;
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result = "${initNum} ${initUnit} converts to ${returnNum}${returnUnit}"
+    var result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`
     
     return result;
   };
