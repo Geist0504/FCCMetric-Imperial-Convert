@@ -28,13 +28,13 @@ module.exports = function (app) {
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       if(initNum == 'invalid number' && initUnit == 'invalid input'){
-        res.json({result: 'invalid number and unit'})
+        res.send('invalid number and unit')
       }
       if(initNum == 'invalid number'){
-        res.json({result: 'invalid number'})
+        res.send('invalid number')
       }
       if(initUnit == 'invalid input'){
-        res.json({result: 'invalid unit'})
+        res.send('invalid unit')
       }
       res.json({initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: toString})
     });
